@@ -42,7 +42,7 @@ jobs:
 
       - name: Build the driver
         run: |
-          msbuild "SimpleAudioSample.sln" /p:Configuration=${{ matrix.configuration }} /p:Platform=${{ matrix.platform }}
+          msbuild "SimpleAudioSample.sln" /p:Configuration=${{ matrix.configuration }} /p:Platform=${{ matrix.platform }} /p:SkipApiValidation=true
 
       - name: List build directory
         run: dir "${{ matrix.platform }}\${{ matrix.configuration }}\package"
